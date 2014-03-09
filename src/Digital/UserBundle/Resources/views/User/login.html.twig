@@ -1,0 +1,47 @@
+{% extends "DigitalUserBundle::layout.html.twig" %}
+{% block title %} {{ parent() }} - Login {% endblock %}
+	
+	{% block user_body %}
+	          
+			  
+			  <fieldset id="fild">
+				                	<legend>Login</legend>
+				<!--<label class="control-label" for="prependedInput"><h2 id="border">Login</h2></label>-->
+                                
+						<div class="form-controls">
+    						<div class="input-prepend">
+    							
+								     <span class="add-on">Utilisateur</span>
+    							     <input type="text" autofocus="" required="" placeholder="Votre Nom" id="login" name="username">
+
+								</div> 
+						</div>
+                          	<div class="input-prepend">
+    						 	
+								     <span class="add-on">Mot de passe</span>
+    						 	     <input type="password" required="" placeholder="Votre Mot de Passe" id="login" name="password">
+						  
+						  </div>
+                          <div id="list">
+                                <ul>
+                                    <li>
+                                         <div class="form-actions button">
+					    					<button name="valider" type="submit" class="btn btn-alt btn-large btn-primary">Valider</button>
+					                     </div>
+                                    
+									</li>
+                                     <li>
+                                        
+										<div class="form-actions button">
+					    					<button type="reset" class="btn btn-alt btn-large btn-primary">Vider</button>
+					    				 </div>
+                                    
+									</li>
+                                </ul>
+                         </div>
+						             	</fieldset>
+			  
+			  
+			  
+	{% endblock %}
+	

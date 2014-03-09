@@ -1,0 +1,9 @@
+{% for user in users %}
+
+    <ul>
+		<li>
+			 <a href="{{ path('user_display',{'id':user.id}) }}">{{ user.nom }}</a>
+		</li>
+    </ul>
+
+{%endfor%}

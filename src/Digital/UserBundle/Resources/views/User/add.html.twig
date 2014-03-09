@@ -1,0 +1,13 @@
+{% extends "DigitalUserBundle::layout.html.twig" %}
+{% block title %} {{ parent() }} - Add User {% endblock %}
+	
+	{% block user_body %}
+	          
+		        {% include "DigitalUserBundle:user:form.html.twig" %}
+				<p> 
+					 <a href="{{ path('user_homepage',{'name':'ok'}) }}" class="btn"> 
+						  <i class="icon-chevron-left"></i>Home
+					 </a>
+			   </p>
+	{% endblock %}
+	

@@ -1,0 +1,22 @@
+user_homepage:
+    pattern:  /hello
+    defaults: { _controller: DigitalUserBundle:User:index }
+user_add:
+    pattern:  /add
+    defaults: { _controller: DigitalUserBundle:User:add }
+user_delete:
+    pattern:  /delete/{id}
+    defaults: { _controller: DigitalUserBundle:User:delete }
+user_display:
+    pattern:  /display/{id}
+    defaults: { _controller: DigitalUserBundle:User:display }
+user_update:
+    pattern:  /update/{id}
+    defaults: { _controller: DigitalUserBundle:User:update }
+user_login:
+    pattern:  /login
+    defaults: { _controller: DigitalUserBundle:User:login }
+user_point:
+    pattern:  /point/{id}
+    defaults: { _controller: DigitalUserBundle:User:point }
+

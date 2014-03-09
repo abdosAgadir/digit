@@ -1,0 +1,28 @@
+{% extends "DigitalUserBundle::layout.html.twig" %}
+
+{% block title %} {{ parent() }} {% endblock %}
+
+	{% block user_body%}
+	     {% if user is not null %}
+	        
+		    <i>  Bonjour Mr/Mlle: <b>{{ user.nom }}   {{ user.id  }}</b>  </i>
+	        <div class="well">
+			      Il est <b>{{ "now"|date("h:i") }} </b>cliquez sur le bouton ( Pointer ) pour valider votre arrivée 
+	        </div>
+			<div id="confirm" >
+			
+			</div>
+	     <p> 
+					 <a href="{{path('user_homepage')}}" class="btn"> 
+						 <i class="icon-chevron-left"></i>
+						 Return Home
+					 </a>
+					 <a href="{{ path('user_point',{'id': user.id })}}" class="btn">
+						 <i class="icon-edit"></i>
+						 Pointer
+					</a>
+		</p>
+		{% else %}
+		        <p style="color:red;"><em>no user found !! </em></p>
+		{% endif %}
+	{% endblock %}

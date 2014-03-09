@@ -1,0 +1,4 @@
+digital_user:
+    resource: "@DigitalUserBundle/Resources/config/routing.yml"
+    prefix:   /user
+

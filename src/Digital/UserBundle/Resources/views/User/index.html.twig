@@ -1,0 +1,73 @@
+{% extends "DigitalUserBundle::layout.html.twig" %}
+
+{%  block title %} {{ parent() }} {% endblock %}
+{% block stylesheets %}
+					<link rel="stylesheet" href="{{ asset('css/chromatron.css') }}"type="text/css" />
+					<link rel="stylesheet" href="{{ asset('css/chromatron.css') }}"type="text/css" />
+{% endblock %}
+	{% block user_body%}
+	     
+		 
+					<section class="tab-content">
+                         
+                                <div class="tab-pane active" id="horizontal">
+                                
+                                    <form class="form-horizontal">
+                                        <fieldset>
+                                            <legend>Users</legend>
+                                        
+                                        <h3>Liste of Users</h3>
+                                        <table class="table">
+                                            <thead>
+      
+                                                 <tr>
+                                                     <th>Nom</th>
+                                                     <th>Prenom</th>
+                                                     <th>Email</th>
+                                                     <th>Pointages</th>
+													 <th>Action</th>
+                                                 </tr>
+                                             </thead>
+											 <tbody>
+													 {% for user in users %}
+
+															<tr id="{{ user.id }}">
+																<td>
+																	 <a href="{{ path('user_display',{'id':user.id}) }}">{{ user.nom }}</a>
+																</td>
+																<td>
+																	 <a href="{{ path('user_display',{'id':user.id}) }}">{{ user.prenom }}</a>
+																</td>
+																<td>
+																	 <a href="{{ path('user_display',{'id':user.id}) }}">{{ user.Email }}</a>
+																</td>
+																<td>
+																	 <a href="{{ path('user_display',{'id':user.id}) }}">{{ user.Email }}</a>
+																</td>
+																
+																 <td >
+																		<!--aller dant le conntroller client et aporter le code de client -->
+																	    <a href="{{path('user_update',{'id':user.id})}}" > <img src="{{asset('images/mise/edit.png')}}"> &nbsp &nbsp <a/>
+																		
+																		<a href="#" class="delete"> <img src="{{asset('images/mise/supp.png')}}"> &nbsp &nbsp <a/>
+															    </td>
+																
+															</tr>
+
+													{%endfor%}
+											</tbody>
+                                         </table>
+                
+															  </fieldset>
+														   </form>
+													   </div>
+                              </section>
+		 
+		 
+	{% endblock %}
+	
+	{% block javascripts %}
+		{{ parent() }}
+		<script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+		
+		{% endblock %}

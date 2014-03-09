@@ -1,0 +1,7 @@
+parameters:
+#    digital_user.example.class: Digital\UserBundle\Example
+
+services:
+#    digital_user.example:
+#        class: %digital_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
