@@ -52,11 +52,32 @@ class __TwigTemplate_038f02f279f1a516ea58d46cce56aa3bf3640d207069324011ed5c4ddee
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/admin.png"), "html", null, true);
         echo "\" alt=\"John Pixel avatar\">
 \t\t\t\t\t\t<figcaption>
-\t\t\t\t\t\t\t<strong><a class=\"\" href=\"#\">Abdos Bel</a></strong>
-\t\t\t\t\t\t\t<em>Administrator</em>
-\t\t\t\t\t\t\t <ul>\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<li><a title=\"logout\" href=\"#\" class=\"btn btn-primary btn-flat\">logout</a></li>
-\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t";
+        // line 28
+        if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 29
+            echo "\t\t\t\t\t\t\t 
+\t\t\t\t\t\t\t\t\t<strong><a class=\"\" href=\"#\">Connecté : ";
+            // line 30
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user"), "username"), "html", null, true);
+            echo " </a></strong>
+\t\t\t\t\t\t\t\t\t<em>";
+            // line 31
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user"), "roles"), 0, array(), "array"), "html", null, true);
+            echo "</em>
+\t\t\t\t\t\t\t        <ul>\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t<li><a title=\"logout\" href=\"";
+            // line 33
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
+            echo "\" class=\"btn btn-primary btn-flat\">logout</a></li>
+\t\t\t\t\t\t\t       </ul>
+\t\t\t\t\t\t\t";
+        }
+        // line 35
+        echo "\t
+\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t 
 \t\t\t\t\t\t</figcaption>
 \t\t\t\t\t</figure>
 \t\t\t\t</section>
@@ -66,28 +87,31 @@ class __TwigTemplate_038f02f279f1a516ea58d46cce56aa3bf3640d207069324011ed5c4ddee
 \t\t\t\t<!-- Main navigation -->
 \t\t\t\t<nav role=\"navigation\" class=\"main-navigation nav-collapse\">
 \t\t\t\t\t\t<ul>
-\t\t\t\t\t\t    <li>
+\t\t\t\t\t\t";
+        // line 48
+        if ((!$this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED"))) {
+            // line 49
+            echo "\t\t\t\t\t\t    <li>
 \t\t\t\t\t\t\t\t<a class=\"no-submenu\" href=\"";
-        // line 43
-        echo $this->env->getExtension('routing')->getPath("user_login");
-        echo "\"><span class=\"fam-rosette\"></span>Login</a>
+            // line 50
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
+            echo "\"><span class=\"fam-rosette\"></span>Login</a>
 \t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t ";
+        }
+        // line 53
+        echo "\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t<a class=\"no-submenu\" href=\"";
-        // line 46
+        // line 54
         echo $this->env->getExtension('routing')->getPath("user_homepage");
         echo "\"><span class=\"fam-heart\"></span>Home Page</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t<a class=\"no-submenu\" href=\"";
-        // line 49
+        // line 57
         echo $this->env->getExtension('routing')->getPath("user_add");
         echo "\"><span class=\"fam-add\"></span>Add User</a>
 \t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t ";
-        // line 51
-        echo $this->env->getExtension('http_kernel')->renderFragment($this->env->getExtension('http_kernel')->controller("DigitalUserBundle:user:menu"));
-        echo "\t\t\t\t
 \t\t\t\t\t\t</ul>
 \t\t\t\t</nav>
 \t\t\t\t<!-- /Main navigation -->
@@ -95,15 +119,15 @@ class __TwigTemplate_038f02f279f1a516ea58d46cce56aa3bf3640d207069324011ed5c4ddee
 \t\t\t</section>
 \t\t\t<section role=\"main\" class=\"content-block\">
                    ";
-        // line 58
+        // line 65
         $this->displayBlock('body', $context, $blocks);
-        // line 61
+        // line 68
         echo "\t      </section>
 \t\t
 \t\t";
-        // line 63
+        // line 70
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 68
+        // line 75
         echo "\t</body>
 </html>";
     }
@@ -126,21 +150,21 @@ class __TwigTemplate_038f02f279f1a516ea58d46cce56aa3bf3640d207069324011ed5c4ddee
 \t\t\t";
     }
 
-    // line 58
+    // line 65
     public function block_body($context, array $blocks = array())
     {
-        // line 59
+        // line 66
         echo "\t\t\t\t\t\t\t\t\t\t\t   
 \t\t\t\t   ";
     }
 
-    // line 63
+    // line 70
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 64
+        // line 71
         echo "\t\t
 \t\t<script type=\"text/javascript\" src=\"";
-        // line 65
+        // line 72
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery-1.9.1.js"), "html", null, true);
         echo "\"></script>
 \t\t
@@ -159,6 +183,6 @@ class __TwigTemplate_038f02f279f1a516ea58d46cce56aa3bf3640d207069324011ed5c4ddee
 
     public function getDebugInfo()
     {
-        return array (  144 => 65,  141 => 64,  138 => 63,  133 => 59,  130 => 58,  123 => 10,  120 => 9,  112 => 5,  107 => 68,  105 => 63,  101 => 61,  99 => 58,  89 => 51,  84 => 49,  78 => 46,  72 => 43,  52 => 26,  36 => 12,  34 => 9,  31 => 8,  29 => 5,  23 => 1,);
+        return array (  168 => 72,  165 => 71,  162 => 70,  157 => 66,  154 => 65,  147 => 10,  144 => 9,  136 => 5,  131 => 75,  129 => 70,  125 => 68,  123 => 65,  112 => 57,  106 => 54,  103 => 53,  97 => 50,  94 => 49,  92 => 48,  77 => 35,  71 => 33,  66 => 31,  62 => 30,  59 => 29,  57 => 28,  52 => 26,  36 => 12,  34 => 9,  31 => 8,  29 => 5,  23 => 1,);
     }
 }

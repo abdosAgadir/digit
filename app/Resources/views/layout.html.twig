@@ -25,11 +25,17 @@
 					<figure>
 						<img src="{{asset('images/admin.png')}}" alt="John Pixel avatar">
 						<figcaption>
-							<strong><a class="" href="#">Abdos Bel</a></strong>
-							<em>Administrator</em>
-							 <ul>							
-								<li><a title="logout" href="#" class="btn btn-primary btn-flat">logout</a></li>
-							</ul>
+							{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+							 
+									<strong><a class="" href="#">Connecté : {{ app.user.username }} </a></strong>
+									<em>{{ app.user.roles[0] }}</em>
+							        <ul>							
+										<li><a title="logout" href="{{path('fos_user_security_logout') }}" class="btn btn-primary btn-flat">logout</a></li>
+							       </ul>
+							{% endif %}	
+							
+							
+							 
 						</figcaption>
 					</figure>
 				</section>
@@ -39,16 +45,17 @@
 				<!-- Main navigation -->
 				<nav role="navigation" class="main-navigation nav-collapse">
 						<ul>
+						{% if not is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 						    <li>
-								<a class="no-submenu" href="{{path('user_login')}}"><span class="fam-rosette"></span>Login</a>
+								<a class="no-submenu" href="{{path('fos_user_security_login')}}"><span class="fam-rosette"></span>Login</a>
 							</li>
+						 {%endif%}
 							<li>
 								<a class="no-submenu" href="{{path('user_homepage')}}"><span class="fam-heart"></span>Home Page</a>
 							</li>
 							<li>
 								<a class="no-submenu" href="{{path('user_add')}}"><span class="fam-add"></span>Add User</a>
 							</li>
-							 {{render(controller("DigitalUserBundle:user:menu"))}}				
 						</ul>
 				</nav>
 				<!-- /Main navigation -->

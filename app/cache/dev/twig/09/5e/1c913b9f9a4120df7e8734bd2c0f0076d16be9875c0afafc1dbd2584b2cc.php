@@ -10,10 +10,8 @@ class __TwigTemplate_095e1c913b9f9a4120df7e8734bd2c0f0076d16be9875c0afafc1dbd258
         $this->parent = $this->env->loadTemplate("::layout.html.twig");
 
         $this->blocks = array(
-            'title' => array($this, 'block_title'),
             'body' => array($this, 'block_body'),
-            'user_body' => array($this, 'block_user_body'),
-            'javascripts' => array($this, 'block_javascripts'),
+            'fos_user_content' => array($this, 'block_fos_user_content'),
         );
     }
 
@@ -27,50 +25,60 @@ class __TwigTemplate_095e1c913b9f9a4120df7e8734bd2c0f0076d16be9875c0afafc1dbd258
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 3
-    public function block_title($context, array $blocks = array())
-    {
-        // line 4
-        echo "              
-";
-    }
-
-    // line 7
+    // line 5
     public function block_body($context, array $blocks = array())
     {
+        // line 6
+        echo "
+\t\t\t\t";
         // line 8
         echo "
-
-\t
-        ";
-        // line 11
-        $this->displayBlock('user_body', $context, $blocks);
+\t\t\t\t";
+        // line 9
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session"), "flashbag"), "all", array(), "method"));
+        foreach ($context['_seq'] as $context["key"] => $context["message"]) {
+            // line 10
+            echo "\t\t\t\t
+\t\t\t\t\t\t\t<div class=\"alert alert-";
+            // line 11
+            echo twig_escape_filter($this->env, (isset($context["key"]) ? $context["key"] : $this->getContext($context, "key")), "html", null, true);
+            echo "\">
+\t\t\t\t\t\t\t";
+            // line 12
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans((isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), array(), "FOSUserBundle"), "html", null, true);
+            echo "
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t
+\t\t\t\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
         // line 16
-        echo "\t 
-";
-    }
-
-    // line 11
-    public function block_user_body($context, array $blocks = array())
-    {
-        // line 12
-        echo "             
-                     
-\t\t   
-        ";
-    }
-
-    // line 18
-    public function block_javascripts($context, array $blocks = array())
-    {
-        // line 19
-        echo "\t\t
-\t\t";
-        // line 20
-        $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
-\t\t
+\t\t\t\t";
+        // line 18
+        echo "                   
+\t\t\t\t";
+        // line 19
+        $this->displayBlock('fos_user_content', $context, $blocks);
+        // line 23
+        echo "                    
+
+\t\t\t\t\t 
+
+\t\t\t\t
 ";
+    }
+
+    // line 19
+    public function block_fos_user_content($context, array $blocks = array())
+    {
+        // line 20
+        echo "
+\t\t\t\t
+\t\t\t\t";
     }
 
     public function getTemplateName()
@@ -85,6 +93,6 @@ class __TwigTemplate_095e1c913b9f9a4120df7e8734bd2c0f0076d16be9875c0afafc1dbd258
 
     public function getDebugInfo()
     {
-        return array (  70 => 20,  67 => 19,  64 => 18,  57 => 12,  54 => 11,  49 => 16,  47 => 11,  42 => 8,  39 => 7,  34 => 4,  31 => 3,  48 => 8,  45 => 7,  43 => 6,  40 => 5,  37 => 4,  29 => 2,);
+        return array (  79 => 20,  76 => 19,  67 => 23,  65 => 19,  62 => 18,  59 => 16,  49 => 12,  45 => 11,  42 => 10,  38 => 9,  35 => 8,  32 => 6,  29 => 5,);
     }
 }

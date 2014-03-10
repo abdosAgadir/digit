@@ -5,7 +5,7 @@
 					<link rel="stylesheet" href="{{ asset('css/chromatron.css') }}"type="text/css" />
 					<link rel="stylesheet" href="{{ asset('css/chromatron.css') }}"type="text/css" />
 {% endblock %}
-	{% block user_body%}
+	{% block body%}
 	     
 		 
 					<section class="tab-content">
@@ -21,10 +21,8 @@
                                             <thead>
       
                                                  <tr>
-                                                     <th>Nom</th>
-                                                     <th>Prenom</th>
+                                                     <th>UserName</th>
                                                      <th>Email</th>
-                                                     <th>Pointages</th>
 													 <th>Action</th>
                                                  </tr>
                                              </thead>
@@ -33,20 +31,13 @@
 
 															<tr id="{{ user.id }}">
 																<td>
-																	 <a href="{{ path('user_display',{'id':user.id}) }}">{{ user.nom }}</a>
+																	 {{ user.username }}
 																</td>
 																<td>
-																	 <a href="{{ path('user_display',{'id':user.id}) }}">{{ user.prenom }}</a>
-																</td>
-																<td>
-																	 <a href="{{ path('user_display',{'id':user.id}) }}">{{ user.Email }}</a>
-																</td>
-																<td>
-																	 <a href="{{ path('user_display',{'id':user.id}) }}">{{ user.Email }}</a>
-																</td>
-																
+																	{{ user.email }}
+																</td>														
 																 <td >
-																		<!--aller dant le conntroller client et aporter le code de client -->
+																	
 																	    <a href="{{path('user_update',{'id':user.id})}}" > <img src="{{asset('images/mise/edit.png')}}"> &nbsp &nbsp <a/>
 																		
 																		<a href="#" class="delete"> <img src="{{asset('images/mise/supp.png')}}"> &nbsp &nbsp <a/>
@@ -62,7 +53,7 @@
 														   </form>
 													   </div>
                               </section>
-		 
+		
 		 
 	{% endblock %}
 	

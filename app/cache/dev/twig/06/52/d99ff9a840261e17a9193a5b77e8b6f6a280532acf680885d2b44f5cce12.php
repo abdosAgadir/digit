@@ -11,7 +11,7 @@ class __TwigTemplate_0652d99ff9a840261e17a9193a5b77e8b6f6a280532acf680885d2b44f5
 
         $this->blocks = array(
             'title' => array($this, 'block_title'),
-            'user_body' => array($this, 'block_user_body'),
+            'body' => array($this, 'block_body'),
         );
     }
 
@@ -34,7 +34,7 @@ class __TwigTemplate_0652d99ff9a840261e17a9193a5b77e8b6f6a280532acf680885d2b44f5
     }
 
     // line 4
-    public function block_user_body($context, array $blocks = array())
+    public function block_body($context, array $blocks = array())
     {
         // line 5
         echo "\t          
@@ -50,6 +50,7 @@ class __TwigTemplate_0652d99ff9a840261e17a9193a5b77e8b6f6a280532acf680885d2b44f5
 \t\t\t\t\t\t  <i class=\"icon-chevron-left\"></i>Home
 \t\t\t\t\t </a>
 \t\t\t   </p>
+
 \t";
     }
 

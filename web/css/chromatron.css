@@ -12579,8 +12579,8 @@ h3{
   text-align: center;
    font-size: 19.95px
 }
-.input-prepend,input,#login{
-  height: 38px;
+.input-prepend,input,#login,#password,#username{
+  height: 47px;
 }
 #border{
   border-bottom: 2px solid #BFBFBF;

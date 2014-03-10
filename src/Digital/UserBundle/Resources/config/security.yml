@@ -1,7 +1,20 @@
-parameters:
-#    digital_user.example.class: Digital\UserBundle\Example
-
-services:
-#    digital_user.example:
-#        class: %digital_user.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+security:
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
+    firewalls:
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            pattern: .*
+            anonymous: true
+            provider: fos_userbundle
+            form_login:
+                login_path: fos_user_security_login
+                check_path: fos_user_security_check
+            logout:
+                path: fos_user_security_logout
+                target: /login
+            remember_me:
+                key: %secret%

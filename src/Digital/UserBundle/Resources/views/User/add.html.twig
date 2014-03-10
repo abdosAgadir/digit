@@ -1,7 +1,7 @@
 {% extends "DigitalUserBundle::layout.html.twig" %}
 {% block title %} {{ parent() }} - Add User {% endblock %}
 	
-	{% block user_body %}
+	{% block body %}
 	          
 		        {% include "DigitalUserBundle:user:form.html.twig" %}
 				<p> 
@@ -9,5 +9,6 @@
 						  <i class="icon-chevron-left"></i>Home
 					 </a>
 			   </p>
+
 	{% endblock %}
 	
