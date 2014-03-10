@@ -330,7 +330,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // fos_user_change_password
-        if ($pathinfo === '/change/change-password') {
+        if ($pathinfo === '/profile/change-password') {
             if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
                 $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
                 goto not_fos_user_change_password;

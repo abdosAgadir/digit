@@ -109,7 +109,7 @@ class __TwigTemplate_038f02f279f1a516ea58d46cce56aa3bf3640d207069324011ed5c4ddee
 \t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t<a class=\"no-submenu\" href=\"";
         // line 57
-        echo $this->env->getExtension('routing')->getPath("user_add");
+        echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
         echo "\"><span class=\"fam-add\"></span>Add User</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t</ul>
