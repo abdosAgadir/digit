@@ -9,6 +9,7 @@ security:
         main:
             pattern: .*
             anonymous: true
+            security: true
             provider: fos_userbundle
             form_login:
                 login_path: fos_user_security_login
